@@ -1,0 +1,22 @@
+//extends layout/main-layout.pug
+
+block styles
+  link(rel='stylesheet' href='/css/product.css')
+
+block content
+  main
+    if products.length > 0
+      .grid
+        each product in products
+          article.card.product-item
+            header.card__header
+              h1.product-title #{product.title}
+            .card-image
+              img(src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Ftimedotcom.files.wordpress.com%2F2015%2F06%2Fthe_4-hour_workweek_front_cover-copy.jpg%3Fquality%3D85&w=800&c=sc&poi=face&q=85")
+            .card-content
+              h2.product-price $19.99
+              p.product-description A very interesting book about so many even
+            .card-actions
+              button.btn Add to Cart
+    else
+      h1  no products
